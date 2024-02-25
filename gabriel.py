@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-log = True
+log = False
 
 if log: print('Objetivo: Média de preços de compra por consumidores de um mesmo estado')
 if log: print('Com indices: [order_id, customer_id, customer_state, customer_city, payment_value]')
@@ -21,3 +21,6 @@ df = df[['order_id', 'customer_id', 'customer_state', 'customer_city', 'payment_
 if log: print(f'\nTabela para análise: \n{df}')
 
 if log: print(f'\nQuantidade de nulos: {df.isnull().sum().sum()}')
+
+payment_by_state = df.groupby('customer_state').mean()
+print(f'\nMédia dos valores das compras por estado: \n{payment_by_state}')
