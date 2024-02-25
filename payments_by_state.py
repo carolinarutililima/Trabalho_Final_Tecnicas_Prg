@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-log = False
+log = True
 
 if log: print('Objetivo: Média de preços de compra por consumidores de um mesmo estado')
 if log: print('Com indices: [order_id, customer_id, customer_state, customer_city, payment_value]')
@@ -27,4 +27,4 @@ if log: print(f'\nMédia dos valores das compras por estado: \n{payments_by_stat
 if log: print(f'\nEstados com as menores médias:  \n{payments_by_state.head()}')
 if log: print(f'\nEstados com as maiores médias:  \n{payments_by_state.tail()}')
 
-print(payment_by_state.describe())
+if log: print(f'\nAnálise de todos os estados: \n{payments_by_state.describe()}')
