@@ -22,5 +22,7 @@ if log: print(f'\nTabela para análise: \n{df}')
 
 if log: print(f'\nQuantidade de nulos: {df.isnull().sum().sum()}')
 
-payments_by_state = df.groupby('customer_state').mean()
-print(f'\nMédia dos valores das compras por estado: \n{payments_by_state}')
+payments_by_state = df[['customer_state', 'payment_value']].groupby('customer_state').mean().sort_values('payment_value')
+if log: print(f'\nMédia dos valores das compras por estado: \n{payments_by_state}')
+if log: print(f'\nEstados com as menores médias:  \n{payments_by_state.head()}')
+if log: print(f'\nEstados com as maiores médias:  \n{payments_by_state.tail()}')
