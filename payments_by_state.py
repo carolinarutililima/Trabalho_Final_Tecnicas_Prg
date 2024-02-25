@@ -26,3 +26,5 @@ payments_by_state = df[['customer_state', 'payment_value']].groupby('customer_st
 if log: print(f'\nMédia dos valores das compras por estado: \n{payments_by_state}')
 if log: print(f'\nEstados com as menores médias:  \n{payments_by_state.head()}')
 if log: print(f'\nEstados com as maiores médias:  \n{payments_by_state.tail()}')
+
+print(payment_by_state.describe())
