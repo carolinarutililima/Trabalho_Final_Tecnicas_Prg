@@ -22,5 +22,5 @@ if log: print(f'\nTabela para análise: \n{df}')
 
 if log: print(f'\nQuantidade de nulos: {df.isnull().sum().sum()}')
 
-payment_by_state = df.groupby('customer_state').mean()
-print(f'\nMédia dos valores das compras por estado: \n{payment_by_state}')
+payments_by_state = df.groupby('customer_state').mean()
+print(f'\nMédia dos valores das compras por estado: \n{payments_by_state}')
